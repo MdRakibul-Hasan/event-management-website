@@ -12,6 +12,8 @@ import LayOut from './Components/LayOut.jsx';
 import Home from './Components/Home/Home.jsx';
 import Login from './Components/Services/Login/Login.jsx';
 import AuthProvider from './Components/Services/AuthProvider.jsx';
+import ServiceDetailes from './Components/Home/ServiceDetailes.jsx';
+import ProtectedRoute from './Components/Services/ProtectedRoute/ProtectedRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,12 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: ()=>fetch('/data.json')
 
+      },
+      {
+        path: '/servicedetailes/:id',
+        element: <ProtectedRoute><ServiceDetailes></ServiceDetailes></ProtectedRoute>,
+        loader: ()=>fetch('/data.json'),
+        
       },
       {
         path: '/login',

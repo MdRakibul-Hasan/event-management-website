@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const {signIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -18,8 +20,20 @@ const Login = () => {
        
         signIn(email, password)
     
-        .then(result => {
-            console.log(result.user);
+        .then(result => {const notify2 = () => toast.success('Your Login is Successful', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+      console.log(result.user);
+      notify2();
+      navigate(location?.state ? location.state : '/');
+
         })
         .catch( error => {
           const notify = () => toast.error(error.message, {

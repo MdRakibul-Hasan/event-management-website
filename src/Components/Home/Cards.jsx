@@ -1,4 +1,5 @@
 // 'use client';
+import { Link } from "react-router-dom";
 import "./Cards.css"
 // import { Card } from 'flowbite-react';
 
@@ -18,7 +19,7 @@ const {id, image, picture, price, title, shortDescription} = card || {}
         <p>
           <span>Price: {price} $</span>
         </p>
-        <button>See Details</button>
+        <Link to={`/servicedetailes/${id}`}><button>See Details</button></Link>
       </div>
     </div>
 
