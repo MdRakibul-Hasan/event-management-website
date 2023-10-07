@@ -3,6 +3,8 @@ import auth from "../firebase.config";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -20,15 +22,27 @@ const Login = () => {
             console.log(result.user);
         })
         .catch( error => {
-            console.log(error);
-        })
+          const notify = () => toast.error(error.message, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+              });
+          console.log(error);
+          notify();
+          
+      })
     
     }
     
     
         return (
             <div>
-                
+                <ToastContainer />
                 {/* <div className="min-h-screen bg-base-200"> */}
                 <h2 className="text-3xl my-8 text-center">Login now</h2>
       <div className="hero-content flex-col lg:flex-row-reverse pb-32">

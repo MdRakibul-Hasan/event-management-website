@@ -43,7 +43,7 @@ else if(!/[A-Z]/.test(password)){
     notify4();
     return;
 }
-else if(!/^[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]+$/.test(password)){
+else if(!/^[!@#$%^&*()_+{}[\]:;<>,.?~\\-]+$/.test(password)){
     const notify5 = () => toast.error("The password don't have a special character", {
         position: "top-right",
         autoClose: 5000,
@@ -100,10 +100,11 @@ createUser(email, password)
             <ToastContainer />
             {/* <div className="min-h-screen bg-base-200"> */}
             <h2 className="text-3xl my-8 text-center">Register now</h2>
-  <div className="hero-content flex-col lg:flex-row-reverse pb-32">
+  <div className="hero-content min-h-screen bg-base-100">
 
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form onSubmit={handleRegister} className="card-body">
+      <div className="card-body">
+      <form onSubmit={handleRegister}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -119,20 +120,20 @@ createUser(email, password)
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
-        <div className="form-control mt-6">
+        <div className="form-control">
           <button className="btn btn-primary">Register</button>
         </div>
-        <div>
-        <p className="text-center m-4">Already have an account, <Link to="/login" className="text-blue-500 font-bold">
+        
+        </form>
+        <p className="text-center mt-4">Already have an account, <Link to="/login" className="text-blue-500 font-bold">
       Login</Link></p>
         </div>
-      </form>
+      
 
  
     </div>
   </div>
-
-</div>
+ </div>
         
     );
 };

@@ -1,0 +1,108 @@
+
+.card {
+    width: 100%;
+    height: 60vh;
+    border-radius: 10px;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .overlay:hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: 500ms;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  .card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .card-content h2 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 23px;
+  }
+  
+  .card-content p {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .card-content p span {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(191, 191, 255);
+    padding-top: 4px;
+    padding-bottom: 5px;
+  }
+  
+  .card-content button {
+    background-color: rgb(1, 1, 231);
+    color: white;
+    padding: 7px 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  .card-content button:hover {
+    transition: 500ms;
+    background-color: rgb(1, 1, 146);
+    font-weight: bold;
+
+  }
+  
+  
+
+  @media screen and (max-width: 780px) {
+    .card {
+      width: 100%; 
+      max-width: none; 
+      height: 80vh; 
+    }
+    .card-content h2 {
+        text-align: center;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .card-content button {
+        background-color: blue;
+        color: white;
+        padding: 5px 13px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 5px;
+
+      }
+
+
+      .card-content p {
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+  }
+  
