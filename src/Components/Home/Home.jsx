@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "./cards";
+import Offer from "../Offer/Offer";
 'use client';
 
 
@@ -42,9 +43,16 @@ const cards = useLoaderData();
     </div>
   </div>
 </div>
+</div>
+{/* Carosel end here */}
 
-            </div>
+{/* count down offers */}
+<Offer></Offer>
 
+
+{/* service card start here */}
+
+<div><h2 className="text-center font-bold text-3xl mb-8">Our Services</h2></div>
             <div className="grid grid-cols-2 gap-8 px-16 pb-10 max-md:grid-cols-1">
                 {cards.map((card) => <Cards key={card.id} card={card}></Cards>)}
             </div>

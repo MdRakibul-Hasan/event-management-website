@@ -29,22 +29,9 @@ if (password.length < 6){
     notify3();
     return;
 }
+
 else if(!/[A-Z]/.test(password)){
-    const notify4 = () => toast.error("The password don't have a capital letters", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
-    notify4();
-    return;
-}
-else if(!/^[!@#$%^&*()_+{}[\]:;<>,.?~\\-]+$/.test(password)){
-    const notify5 = () => toast.error("The password don't have a special character", {
+    const notify5 = () => toast.error("The password don't have a capital letter", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -57,6 +44,22 @@ else if(!/^[!@#$%^&*()_+{}[\]:;<>,.?~\\-]+$/.test(password)){
     notify5();
     return;
 }
+else if(!/[@!#$%*&]/.test(password)){
+  const notify5 = () => toast.error("The password don't have a special character", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  notify5();
+  return;
+}
+
+
 
 
 createUser(email, password)

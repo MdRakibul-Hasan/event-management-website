@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Services/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
 
@@ -8,7 +10,20 @@ const Navbar = () => {
 
 const handleSignOut = () => {
   logOut()
-  .then()
+  .then(result => {
+    const notify2 = () => toast.success('Your Sign Out is Successful', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  console.log(result.user);
+  notify2();
+  })
   .catch()
 
   // akahne task baki amar optional
@@ -25,12 +40,13 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
 <div>
+<ToastContainer />
 
-<nav className="bg-black bg-opacity-75 fixed top-0 w-full z-10">
+<nav className="bg-black bg-opacity-70 fixed top-0 w-full z-10">
       <div className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           {/* Logo on the left */}
-          <div className="text-white text-lg font-bold">Logo</div>
+          <div> <Link to="/"><img className="w-[30%]" src="https://ebook.projectbd.com/wp-content/uploads/2023/10/event-logo-white-bg-remove.png" alt="" /></Link> </div>
 
           {/* Menu items in the middle */}
           <div className="hidden md:flex space-x-4">
@@ -55,9 +71,9 @@ isPending ? "pending" : isActive ? "text-blue-400 font-bold" : "text-white"}>Hom
          
           {
  user ? 
-<Link onClick={handleSignOut} to="/login" className="bg-white text-black py-2 px-4 rounded-full mt-4 hover:bg-slate-200">Sign Out</Link>
+<Link onClick={handleSignOut} to="/login" className="hidden md:block bg-white text-black py-1 px-3 rounded-full mt-1 hover:bg-slate-200">Sign Out</Link>
     :
- <Link to="/login" className="bg-white text-black py-2 px-4 rounded-full mt-4 hover:bg-slate-200">Login</Link>
+ <Link to="/login" className="hidden md:block bg-white text-black py-1 px-3 rounded-full mt-1 hover:bg-slate-200">Login</Link>
 
  }
 
@@ -100,9 +116,9 @@ isPending ? "pending" : isActive ? "text-blue-400 font-bold" : "text-white"}>Hom
 
           {
  user ? 
-<Link onClick={handleSignOut} to="/login" className="bg-white text-black py-2 px-4 rounded-full mt-4">Sign Out</Link>
+<Link onClick={handleSignOut} to="/login" className="bg-white text-black py-1 px-4 rounded-full mt-2">Sign Out</Link>
     :
- <Link to="/login" className="bg-white text-black py-2 px-4 rounded-full mt-4">Login</Link>
+ <Link to="/login" className="bg-white text-black py-1 px-4 rounded-full mt-2">Login</Link>
 
  }
 

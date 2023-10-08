@@ -1,16 +1,46 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import auth from "../firebase.config";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+// import auth from "../firebase.config";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AuthContext } from "../AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import app from "../firebase.config";
+const auth = getAuth(app)
 
 const Login = () => {
 
     const {signIn} = useContext(AuthContext);
+    const {handleGoogleSignIn} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const emailRef = useRef(null);
+
+    const handleGoogleBtn = ()=>{
+      handleGoogleSignIn()
+         
+   .then(result => {
+    const notify2 = () => toast.success('Congratulation, Your registration is Successful', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+console.log(result.user);
+notify2();
+navigate(location?.state ? location.state : '/');
+   })
+
+   .catch(error => {
+    console.log('error', error.message);
+   })
+    }
+
+
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -36,7 +66,7 @@ const Login = () => {
 
         })
         .catch( error => {
-          const notify = () => toast.error(error.message, {
+          const notify = () => toast.error("Password or Email dosen't match", {
               position: "top-right",
               autoClose: 5000,
               hideProgressBar: false,
@@ -53,6 +83,95 @@ const Login = () => {
     
     }
     
+const handleForgetPass = () => {
+  const email = emailRef.current.value;
+  console.log(email);
+
+  if(!email){
+    // console.log('Please give me a valid email', emailRef.current.value)
+
+    const notify = () => toast.error("Please give me a valid email", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+
+  notify();
+
+  return;
+  }
+  else if (!/[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/.test(email))
+  {
+    // console.log('Please write a valid email')
+
+    const notify = () => toast.error("Please write a valid email", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+
+  notify();
+
+
+
+    return;
+  }
+
+  sendPasswordResetEmail(auth,email)
+
+.then(() => {
+  // console.log('please check your email')
+
+  const notify2 = () => toast.success('Please check your email', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+notify2();
+
+
+
+})
+.catch(error => {
+  console.log(error);
+  const notify = () => toast.error(error.message, {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
+
+notify();
+
+
+
+
+
+})
+
+
+
+}
+
     
         return (
             <div>
@@ -67,7 +186,7 @@ const Login = () => {
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+              <input type="email" ref={emailRef} name="email" placeholder="email" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
@@ -75,7 +194,7 @@ const Login = () => {
               </label>
               <input type="password" name="password" placeholder="password" className="input input-bordered" required />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                <a onClick={handleForgetPass} href="#" className="label-text-alt link link-hover">Forgot password?</a>
               </label>
             </div>
             <div className="form-control mt-6">
@@ -84,6 +203,10 @@ const Login = () => {
           </form>
           <p className="text-center m-4">Don't have an account? <Link to="/register" className="text-blue-500 font-bold">
           Register</Link></p>
+
+          <div className="form-control mt-6">
+              <button onClick={handleGoogleBtn} className="btn btn-primary">Google login</button>
+            </div>
         </div>
       </div>
     
