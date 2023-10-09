@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import Helmet from 'react-helmet';
 
 const GetAQuote = () => {
 
@@ -15,7 +16,7 @@ const GetAQuote = () => {
 
 
     return (
-        <div className="mt-20 pt-10 pb-20">
+        <div className="mt-20 pt-10 pb-20"><Helmet><title>Get a Quote</title></Helmet>
             
             <h2 className="text-2xl text-center font-semibold mb-4">Get A Quote Today</h2>
             <div className="max-w-md mx-auto bg-white rounded p-6 shadow-lg">

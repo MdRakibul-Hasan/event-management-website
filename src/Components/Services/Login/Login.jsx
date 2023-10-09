@@ -1,5 +1,4 @@
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-// import auth from "../firebase.config";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useRef } from "react";
 import { AuthContext } from "../AuthProvider";
@@ -7,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import app from "../firebase.config";
 const auth = getAuth(app)
+import Helmet from 'react-helmet';
 
 const Login = () => {
 
@@ -176,9 +176,9 @@ notify();
         return (
 <div
       className="bg-cover min-h-screen flex items-center justify-center"
-      style={{ backgroundImage: 'url(https://ebook.projectbd.com/wp-content/uploads/2023/10/Engagement-small.jpg)' }}>
+      style={{ backgroundImage: 'url(https://ebook.projectbd.com/wp-content/uploads/2023/10/Engagement-small.jpg)' }}> <Helmet><title>Login</title></Helmet>
       <ToastContainer />
-      <div className="bg-black bg-opacity-40 p-4 my-24 sm:p-8 rounded-lg shadow-md w-full sm:w-96">
+      <div className="bg-black bg-opacity-50 p-4 my-24 sm:p-8 rounded-lg shadow-md w-full sm:w-96">
         <h2 className="text-3xl text-white font-semibold mb-4 mt-2 text-center">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">

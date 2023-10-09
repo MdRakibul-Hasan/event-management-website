@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Helmet from 'react-helmet';
 
 const AboutUs = () => {
     return (
-        <div>
+        <div><Helmet><title>About Us</title></Helmet>
             <div>
 
                 <div className="py-8 my-24 px-12">

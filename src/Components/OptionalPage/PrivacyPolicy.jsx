@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Helmet from 'react-helmet';
 
 const PrivacyPolicy = () => {
     return (
-        <div>
+        <div><Helmet><title>Privacy Policy</title></Helmet>
             <div className="py-8 my-24 px-12">
       <h2 className="text-3xl font-semibold mb-4">Privacy Policy</h2>
       <p>

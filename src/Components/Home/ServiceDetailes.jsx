@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import Helmet from 'react-helmet';
 
 const ServiceDetailes = () => {
 const serviceDetailes = useLoaderData()
@@ -20,7 +21,7 @@ const ServiceDetail = serviceDetailes.find(ServiceDetail => ServiceDetail.id ===
 const {image, price, title, description} = ServiceDetail || {}
 
     return (
-        <div>
+        <div><Helmet><title>Services</title></Helmet>
 <div className="flex justify-center pt-12 mt-8 ">
     <img className="w-[80%] rounded-lg h-[auto] " src={image} alt="" /> 
 </div>

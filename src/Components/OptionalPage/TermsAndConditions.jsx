@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Helmet from 'react-helmet';
 
 const TermsAndConditions = () => {
     return (
-        <div>
+        <div><Helmet><title>Terms and Conditions</title></Helmet>
             <div className="py-8 my-24 px-12">
       <h2 className="text-3xl font-semibold mb-4">Terms and Conditions</h2>
       <p>

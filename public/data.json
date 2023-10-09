@@ -1,8 +1,8 @@
 [
     {
       "id": 1,
-      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/wedding-small.png",
-      "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/wedding-big.jpg",
+      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/wedding.jpg",
+      "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/wedding.jpg",
       "price": 1000,
       "title": "Wedding",
       "shortDescription": "Elegant wedding packages, stunning venues, expert ...",
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/happybd-small.jpg",
-      "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/happybd-big.jpg",
+      "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/happybd-small.jpg",
       "price": 500,
       "title": "Birthday parties",
       "shortDescription": "Ultimate birthday bash with themed decorations and ...",
@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/aniversary-small.png",
+      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Aniversary-big.jpg",
       "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Aniversary-big.jpg",
       "price": 800,
       "title": "Anniversaries",
@@ -29,7 +29,7 @@
     {
       "id": 4,
       "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Engagement-small.jpg",
-      "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/engagement-big.jpg",
+      "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Engagement-small.jpg",
       "price": 750,
       "title": "Engagement parties",
       "shortDescription": "Spectacular engagement parties to announce your ...",
@@ -37,7 +37,7 @@
     },
     {
       "id": 5,
-      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Retirement-party-small.png",
+      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Retirement-party-small-big.jpg",
       "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/Retirement-party-small-big.jpg",
       "price": 900,
       "title": "Retirements",
@@ -46,7 +46,7 @@
     },
     {
       "id": 6,
-      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/baby-shower-small.png",
+      "image": "https://ebook.projectbd.com/wp-content/uploads/2023/10/baby-shower-big.jpg",
       "picture": "https://ebook.projectbd.com/wp-content/uploads/2023/10/baby-shower-big.jpg",
       "price": 600,
       "title": "Baby shower",

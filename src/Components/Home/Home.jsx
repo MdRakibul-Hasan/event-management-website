@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Sponser from "./Sponser";
+import Helmet from 'react-helmet';
 
 
 const Home = () => {
@@ -19,7 +20,7 @@ useEffect(() => {
 
     return (
         <div>
-
+<Helmet><title>Home</title></Helmet>
            <div>
             <div className="carousel w-full h-[95vh]">
   <div id="slide1" className="carousel-item relative w-full">

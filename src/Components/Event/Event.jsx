@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Helmet from 'react-helmet';
 
 const Event = () => {
 
@@ -23,7 +24,8 @@ const Event = () => {
 
 
     return (
-        <div className=" mt-24">
+        
+        <div className=" mt-24"><Helmet><title>My Event</title></Helmet>
             <div className="px-10">
 
             <div className="flex justify-center items-center align-middle m-auto max-md:flex-col">
@@ -39,7 +41,7 @@ const Event = () => {
                     <textarea rows="4" cols="50" className="py-1 px-1 border-2 border-blue-500 w-[40%] rounded-lg max-md:w-[80%]" 
                      placeholder="Describe Something about your event..." />
 
-<div className=" w-[40%]"><h4 className="text-left px-1">Event Time: </h4></div>
+<div className=" w-[40%]"><h4 className="text-left px-1">Event Date: </h4></div>
 <input type="date" className="py-1 px-1 border-2 border-blue-500 w-[40%] rounded-lg mb-2 max-md:w-[80%]" id="eventday" name="eventday" required/>
 <button className="py-1 px-1 border-2 bg-blue-500 text-white w-[40%] rounded-lg mb-2 max-md:w-[80%] hover:bg-blue-700">Submit</button>
                 </form>
