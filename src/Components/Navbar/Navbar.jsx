@@ -42,7 +42,7 @@ const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 <div>
 <ToastContainer />
 
-<nav className="bg-black bg-opacity-70 fixed top-0 w-full z-10">
+<nav className="bg-black bg-opacity-70 fixed top-0 w-full z-20">
       <div className="container mx-auto py-2">
         <div className="flex items-center justify-between">
          

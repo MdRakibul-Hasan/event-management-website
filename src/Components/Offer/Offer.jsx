@@ -38,7 +38,7 @@ const Offer = () => {
 
     return (
         <div className=' bg-blue-400 -mt-2'>
-            <div><h2 className="text-center font-extrabold text-3xl pt-12 pb-4 text-white">Grab Your Offer Before It's Gone!</h2>        
+            <div><h2 className="text-center font-extrabold text-3xl pt-24 pb-4 text-white">Grab Your Offer Before It's Gone!</h2>        
             </div>
 
 <div className="flex justify-center pb-4">
