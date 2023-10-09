@@ -174,14 +174,75 @@ notify();
 
     
         return (
-            <div>
-                <ToastContainer />
-                {/* <div className="min-h-screen bg-base-200"> */}
-                <h2 className="text-3xl my-8 text-center">Login now</h2>
+<div
+      className="bg-cover min-h-screen flex items-center justify-center"
+      style={{ backgroundImage: 'url(https://ebook.projectbd.com/wp-content/uploads/2023/10/Engagement-small.jpg)' }}>
+      <ToastContainer />
+      <div className="bg-black bg-opacity-40 p-4 my-24 sm:p-8 rounded-lg shadow-md w-full sm:w-96">
+        <h2 className="text-3xl text-white font-semibold mb-4 mt-2 text-center">Login</h2>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
+            <label className="block text-white">
+              Email
+            </label>
+            <input
+              type="email" id="email" name="email"
+              className="border border-gray-300 p-2 w-full rounded"
+              placeholder="email" required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-white">
+              Password
+            </label>
+            <input
+              type="password" id="password" name="password"
+              className="border border-gray-300 p-2 w-full rounded"
+              placeholder="password" required />
+            <label className="label">
+                <a onClick={handleForgetPass} href="#" className="text-white">Forgot password?</a>
+              </label>
+          </div>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white w-full px-4 py-2 rounded hover:bg-blue-600"
+            >
+              Login
+            </button>
+            <p className="text-center m-1 text-white ">Don't have an account? <Link to="/register" className="text-blue-500 font-bold">
+          Register</Link></p>
+          <p className="text-center m-1 text-white ">Login with</p>
+          <div className="flex justify-center"><img onClick={handleGoogleBtn} className="w-[15%] hover:cursor-pointer" src="https://ebook.projectbd.com/wp-content/uploads/2023/10/google-icon.png" alt="" /></div>
+          
+
+
+
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <h2 className="text-3xl my-8 text-center">Login now</h2>
+                <div className="min-h-screen bg-base-200">
+                
       <div className="hero-content flex-col lg:flex-row-reverse pb-32">
     
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleLogin} className="card-body">
+          <div className="card-body">
+          <form onSubmit={handleLogin}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -203,13 +264,20 @@ notify();
           </form>
           <p className="text-center m-4">Don't have an account? <Link to="/register" className="text-blue-500 font-bold">
           Register</Link></p>
-
           <div className="form-control mt-6">
               <button onClick={handleGoogleBtn} className="btn btn-primary">Google login</button>
             </div>
+          </div>
+          
         </div>
       </div>
-    
+      </div> */}
+
+
+
+
+
+
     </div>
             
         );

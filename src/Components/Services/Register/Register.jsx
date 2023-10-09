@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
     
 
 const handleRegister = e =>{
@@ -76,7 +78,7 @@ createUser(email, password)
             });
         console.log(result.user);
         notify2();
-
+        navigate(location?.state ? location.state : '/');
 
     })
     .catch( error => {
@@ -99,10 +101,48 @@ createUser(email, password)
 
 
     return (
-        <div>
-            <ToastContainer />
+      <div
+      className="bg-cover min-h-screen flex items-center justify-center"
+      style={{ backgroundImage: 'url(https://ebook.projectbd.com/wp-content/uploads/2023/10/Aniversary-big.jpg)' }}>
+      <ToastContainer />
+      <div className="bg-black bg-opacity-40 p-4 my-24 sm:p-8 rounded-lg shadow-md w-full sm:w-96">
+        <h2 className="text-3xl text-white font-semibold mb-4 mt-2 text-center">Register</h2>
+        <form onSubmit={handleRegister}>
+          <div className="mb-4">
+            <label className="block text-white">
+              Email
+            </label>
+            <input
+              type="email" id="email" name="email"
+              className="border border-gray-300 p-2 w-full rounded"
+              placeholder="email" required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-white">
+              Password
+            </label>
+            <input
+              type="password" id="password" name="password"
+              className="border border-gray-300 p-2 w-full rounded"
+              placeholder="password" required />
+          </div>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white w-full px-4 py-2 rounded hover:bg-blue-600"
+            >Register </button>
+            
+          <p className="text-center m-1 text-white ">Already have an account, <Link to="/login" className="text-blue-500 font-bold">
+      Login</Link></p>
+         
+
+          </div>
+        </form>
+      </div>
+
             {/* <div className="min-h-screen bg-base-200"> */}
-            <h2 className="text-3xl my-8 text-center">Register now</h2>
+            {/* <h2 className="text-3xl my-8 text-center">Register now</h2>
   <div className="hero-content min-h-screen bg-base-100">
 
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -135,7 +175,7 @@ createUser(email, password)
 
  
     </div>
-  </div>
+  </div> */}
  </div>
         
     );

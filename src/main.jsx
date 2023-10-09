@@ -16,6 +16,9 @@ import ServiceDetailes from './Components/Home/ServiceDetailes.jsx';
 import ProtectedRoute from './Components/Services/ProtectedRoute/ProtectedRoute.jsx';
 import Event from './Components/Event/Event.jsx';
 import GetAQuote from './Components/OptionalPage/GetAQuote.jsx';
+import AboutUs from './Components/OptionalPage/AboutUs.jsx';
+import TermsAndConditions from './Components/OptionalPage/TermsAndConditions.jsx';
+import PrivacyPolicy from './Components/OptionalPage/PrivacyPolicy.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,7 +56,20 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },      
+      {
+        path: '/about-us',
+        element: <AboutUs></AboutUs>
       },
+      {
+        path: '/terms',
+        element: <TermsAndConditions></TermsAndConditions>
+      },
+      {
+        path: '/privacy',
+        element: <PrivacyPolicy></PrivacyPolicy>
+      },
+
     ]
   },
 ]);

@@ -1,13 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "./cards";
 import Offer from "../Offer/Offer";
+import ImageGallery from "./ImageGallery";
 'use client';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 
 const Home = () => {
 
 const cards = useLoaderData();
+useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
+  let greeting;
+greetign = {};
+console.log(greetign);
 
     return (
         <div>
@@ -52,11 +63,16 @@ const cards = useLoaderData();
 
 {/* service card start here */}
 
-<div><h2 className="text-center font-bold text-3xl my-8">Our Services</h2></div>
-            <div className="grid grid-cols-2 gap-8 px-16 pb-10 max-md:grid-cols-1">
+<div><h2 className="text-center font-bold text-3xl my-12">Our Services</h2></div>
+            <div  data-aos="fade-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" className="grid grid-cols-2 gap-8 px-16 pb-10 max-md:grid-cols-1">
                 {cards.map((card) => <Cards key={card.id} card={card}></Cards>)}
             </div>
             
+{/* image gallery starts */}
+<div><h2 className="text-center font-bold text-3xl mt-12 mb-10">Event Gallery </h2></div>
+<div data-aos="zoom-in-up" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"><ImageGallery></ImageGallery></div>
+
+
         </div>
     );
 };

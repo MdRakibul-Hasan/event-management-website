@@ -17,11 +17,11 @@ const handleClick = () =>{
 
 const ServiceDetail = serviceDetailes.find(ServiceDetail => ServiceDetail.id === idInt);
 
-const {image, picture, price, title, description} = ServiceDetail || {}
+const {image, price, title, description} = ServiceDetail || {}
 
     return (
         <div>
-<div className="flex justify-center pt-8 ">
+<div className="flex justify-center pt-12 mt-8 ">
     <img className="w-[80%] rounded-lg h-[auto] " src={image} alt="" /> 
 </div>
 <h2 className="font-bold text-2xl text-center pt-5">{title}</h2>

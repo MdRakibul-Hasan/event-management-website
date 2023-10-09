@@ -1,8 +1,15 @@
 
 import Swal from "sweetalert2";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Event = () => {
 
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
 
     const handleEvent = e =>{
         e.preventDefault();
@@ -21,8 +28,8 @@ const Event = () => {
 
             <div className="flex justify-center items-center align-middle m-auto max-md:flex-col">
                 
-                    <h2 className="text-center font-bold text-3xl mx-16 max-md:text-2xl">Please select the date you'd like for your event. </h2>
-                    <img className="w-[40%] max-md:w-[50%]"  src="https://ebook.projectbd.com/wp-content/uploads/2023/10/calandar.jpg" alt="" />
+                    <h2 data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" className="text-center font-bold text-3xl mx-16 max-md:text-2xl">Please select the date you'd like for your event. </h2>
+                    <img data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"  className="w-[40%] max-md:w-[50%]"  src="https://ebook.projectbd.com/wp-content/uploads/2023/10/calandar.jpg" alt="" />
             </div>
             </div>
             <div>
