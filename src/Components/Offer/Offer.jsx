@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Offer = () => {
@@ -36,32 +37,32 @@ const Offer = () => {
 
 
     return (
-        <div>
-            <div><h2 className="text-center font-extrabold text-3xl pt-12 pb-4">Grab Your Offer Before It's Gone!</h2>        
+        <div className=' bg-blue-400 -mt-2'>
+            <div><h2 className="text-center font-extrabold text-3xl pt-12 pb-4 text-white">Grab Your Offer Before It's Gone!</h2>        
             </div>
 
 <div className="flex justify-center pb-4">
-<div className="grid grid-flow-col gap-5 text-center auto-cols-max">
+<div className="grid grid-flow-col gap-5 text-center auto-cols-max text-white">
       <div className="flex flex-col">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-5xl text-white">
           <span style={{ "--value": days }}>{days}</span>
         </span>
         days
       </div>
       <div className="flex flex-col">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-5xl text-white">
           <span style={{ "--value": hours }}>{hours}</span>
         </span>
         hours
       </div>
       <div className="flex flex-col">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-5xl text-white">
           <span style={{ "--value": minutes }}>{minutes}</span>
         </span>
         min
       </div>
       <div className="flex flex-col">
-        <span className="countdown font-mono text-5xl">
+        <span className="countdown font-mono text-5xl text-white">
           <span style={{ "--value": seconds }}>{seconds}</span>
         </span>
         sec
@@ -70,7 +71,7 @@ const Offer = () => {
 </div>
 
 <div className='flex justify-center pb-16'>
-    <button className="bg-blue-600 text-white text-lg py-2 px-4 rounded-lg hover:bg-blue-800"> Make Event</button>
+    <Link to="/event"><button className="bg-blue-600 text-white text-lg py-2 px-4 rounded-lg hover:bg-blue-800"> Make Event</button></Link>
 </div>
 
         </div>

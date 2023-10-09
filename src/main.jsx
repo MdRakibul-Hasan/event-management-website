@@ -14,6 +14,8 @@ import Login from './Components/Services/Login/Login.jsx';
 import AuthProvider from './Components/Services/AuthProvider.jsx';
 import ServiceDetailes from './Components/Home/ServiceDetailes.jsx';
 import ProtectedRoute from './Components/Services/ProtectedRoute/ProtectedRoute.jsx';
+import Event from './Components/Event/Event.jsx';
+import GetAQuote from './Components/OptionalPage/GetAQuote.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,18 @@ const router = createBrowserRouter([
         loader: ()=>fetch('/data.json'),
         
       },
+      {
+        path: '/event',
+        element: <ProtectedRoute> <Event></Event> </ProtectedRoute>,
+        loader: ()=>fetch('/data.json'),
+        
+      },
+
+{
+   path:'/getquote',
+   element: <ProtectedRoute><GetAQuote></GetAQuote></ProtectedRoute>,
+},
+
       {
         path: '/login',
         element: <Login></Login>

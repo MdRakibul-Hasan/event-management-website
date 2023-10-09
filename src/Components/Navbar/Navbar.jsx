@@ -59,12 +59,12 @@ isPending ? "pending" : isActive ? "text-blue-400 font-bold" : "text-white"}>Hom
             {/* <a href="#" className="text-white">
               Menu 1
             </a> */}
-            <a href="#" className="text-white">
-              Menu 2
-            </a>
-            <a href="#" className="text-white">
-              Menu 3
-            </a>
+            <NavLink to="/event" className={({isActive, isPending}) =>
+isPending ? "pending" : isActive ? "text-blue-400 font-bold" : "text-white"}>My Event</NavLink>
+            
+            
+            <NavLink to="/getquote" className={({isActive, isPending}) =>
+isPending ? "pending" : isActive ? "text-blue-400 font-bold" : "text-white"}>Get Quote</NavLink>
 
           </div>
 
