@@ -2,7 +2,7 @@
 
 <h3> This project is created based on the social event management website</h3>
 
-Here is the 5 most useful feature given below:
+Most useful feature given below:
 
 - Login/Registration. 
 - Google Auth login.
